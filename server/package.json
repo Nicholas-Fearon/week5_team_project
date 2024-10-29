@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
+
   "main": "server.js",
   "scripts": {
     "dev": "node --watch server",
@@ -16,6 +17,10 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "pg": "^8.13.1"
+
   },
   "type": "module"
+
+  }
+
 }

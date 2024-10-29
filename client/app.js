@@ -1,3 +1,4 @@
+const userName = document.getElementById("username");
 const startBtn = document.getElementById("startBtn");
 const option1 = document.getElementById("Option1");
 const option2 = document.getElementById("Option2");
@@ -8,3 +9,8 @@ option 1
 option 2
 */
 
+startBtn.addEventListener("click", () => {
+  if (userName.textContent === "") {
+    alert("Please enter your name");
+  }
+});

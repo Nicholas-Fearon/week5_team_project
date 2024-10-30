@@ -20,7 +20,7 @@ await fetch("http://localhost:8080/username", {
   headers: {
     "content-type": "application/json",
   },
-  body: JSON.stringify(username),
+  body: JSON.stringify(userName),
 });
 
 // get funtion: area/prompt

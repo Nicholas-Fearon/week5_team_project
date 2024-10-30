@@ -7,7 +7,14 @@ const prompt = document.getElementById("prompt");
 const validation = document.getElementById("validation");
 
 //userName validation
-startBtn.addEventListener("click", (event) => {
+startBtn.addEventListener("click", async (event) => {
+  await fetch("http://localhost:8080/username", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(userName),
+  });
   if (userName.value.trim() === "") {
     event.preventDefault(); // Prevent navigation
     validation.textContent = "Please enter your name.";
@@ -15,13 +22,13 @@ startBtn.addEventListener("click", (event) => {
 });
 
 // post request will need to test
-await fetch("http://localhost:8080/username", {
-  method: "POST",
-  headers: {
-    "content-type": "application/json",
-  },
-  body: JSON.stringify(userName),
-});
+//await fetch("http://localhost:8080/username", {
+//method: "POST",
+//headers: {
+//"content-type": "application/json",
+// },
+// body: JSON.stringify(userName),
+//});
 
 // get funtion: area/prompt
 const getPrompts = async () => {

@@ -8,6 +8,10 @@ const validation = document.getElementById("validation");
 
 //userName validation
 startBtn.addEventListener("click", async (event) => {
+  if (userName.value.trim() === "") {
+    event.preventDefault(); // Prevent navigation
+    validation.textContent = "Please enter your name.";
+  }
   await fetch("http://localhost:8080/username", {
     method: "POST",
     headers: {
@@ -15,10 +19,6 @@ startBtn.addEventListener("click", async (event) => {
     },
     body: JSON.stringify(userName),
   });
-  if (userName.value.trim() === "") {
-    event.preventDefault(); // Prevent navigation
-    validation.textContent = "Please enter your name.";
-  }
 });
 
 // post request will need to test
@@ -53,9 +53,6 @@ const getPrompts = async () => {
   area.textContent = data.location;
   prompt.textContent = data.prompt;
 };
-
-// Call getPrompts to initialize
-getPrompts();
 
 // Function to save the player's current location to local storage
 const savePlayerLocation = (newLocationData) => {

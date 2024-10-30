@@ -1,8 +1,7 @@
-
 // JavaScript to toggle settings sidebar
-document.getElementById('menuButton').addEventListener('click', () => {
-    const settings = document.querySelector('.settings');
-    settings.classList.toggle('show');
+document.getElementById("menuButton").addEventListener("click", () => {
+  const settings = document.querySelector(".settings");
+  settings.classList.toggle("show");
 });
 
 const userName = document.getElementById("username");
@@ -23,4 +22,44 @@ const getPrompts = async () => {
   prompt.textContent = data[1].prompt;
 };
 
+// get funtion: options
+const getOptions = async () => {
+  const res = await fetch("http://localhost:8080/options");
+  const data = await res.json();
+  console.log(data);
+};
+
+// get funtion: outcomes
+const getOutcomes = async () => {
+  const res = await fetch("http://localhost:8080/options");
+  const data = await res.json();
+  console.log(data);
+};
+
+// get funtion: monsters
+const getMonsters = async () => {
+  const res = await fetch("http://localhost:8080/monsters");
+  const data = await res.json();
+  console.log(data);
+};
+
+// get funtion: room
+const getRoom = async () => {
+  const res = await fetch("http://localhost:8080/room");
+  const data = await res.json();
+  console.log(data);
+};
+
+// get funtion: options
+const getUsername = async () => {
+  const res = await fetch("http://localhost:8080/username");
+  const data = await res.json();
+  console.log(data);
+};
+
 getPrompts();
+getMonsters();
+getOptions();
+getOutcomes();
+getRoom();
+getUsername();

@@ -10,8 +10,17 @@ const validation = document.getElementById("validation");
 startBtn.addEventListener("click", (event) => {
   if (userName.value.trim() === "") {
     event.preventDefault(); // Prevent navigation
-    validation.textContent = "Please enter your name";
+    validation.textContent = "Please enter your name.";
   }
+});
+
+// post request will need to test
+await fetch("http://localhost:8080/username", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+  },
+  body: JSON.stringify(username),
 });
 
 // get funtion: area/prompt
@@ -19,7 +28,7 @@ const getPrompts = async () => {
   const res = await fetch("http://localhost:8080/gameprompts");
   const data = await res.json();
   console.log(data);
-  area.textContent = data[0].location;
+  area.textContent = data[0].location.toUpperCase();
   prompt.textContent = data[0].prompt;
 };
 

@@ -6,28 +6,21 @@ const area = document.getElementById("area");
 const prompt = document.getElementById("prompt");
 const validation = document.getElementById("validation");
 
-/* get funtion to get:
-room description
-option 1
-option 2
-*/
-
 //userName validation
 startBtn.addEventListener("click", (event) => {
   if (userName.value.trim() === "") {
     event.preventDefault(); // Prevent navigation
-    validation.textContent("Please enter your name");
+    validation.textContent = "Please enter your name";
   }
 });
 
+// get funtion: area/prompt
 const getPrompts = async () => {
   const res = await fetch("http://localhost:8080/gameprompts");
-  const messages = await res.json();
-  console.log(messages);
+  const data = await res.json();
+  console.log(data);
+  area.textContent = data[0].location;
+  prompt.textContent = data[0].prompt;
 };
-
-option1.addEventListener("click", () => {});
-
-option2.addEventListener("click", () => {});
 
 getPrompts();

@@ -17,7 +17,7 @@ startBtn.addEventListener("click", async (event) => {
     headers: {
       "content-type": "application/json",
     },
-    body: JSON.stringify(userName),
+    body: JSON.stringify(userName).value.trim(),
   });
 });
 

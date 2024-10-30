@@ -10,7 +10,7 @@
   <body>
     <div class="app">
     <header>
-      <h1>Basement</h1>
+      <h1 id="area"></h1>
       <div class="logo">
       </div>
       <button id="menuButton" class="menu-button">☰</button>
@@ -18,23 +18,26 @@
     <main>
       <div class="instructions">
         <p><strong> User, Wake Up!!</strong></p>
-        <p> Attic</p>
         <img src="/client/assets/logo/basement_logo.jpeg" alt="" />
-        <p>continue of the story</p>
       </div>
       <div class="story-content">
-        <p>Basement, You open your eyes, and its dark, you find yourself crouched on the cold concrete floor </p>
-        <p> You, Opt 1: Do you ...</p>
-        <p> Opt 2: You ...</p>
+        <p id="prompt"></p>
+        <div>
+            <button id="option1">Option 1</button>
+            <p id="option1"></p>
+        </div>
+        <div>
+            <button id="option2">Option 2</button>
+            <p id="option2"></p>
+        </div>
+        
       </div>
 
       <div class="action-buttons">
         <button class="save">Save</button>
         <button class="redo">Re-do</button>
       </div>
-      <div class="option-buttons"></div>
-      <button class="option" id="Option1">option 1</button>
-      <button class="option" id="Option2">option 2</button>
+      
     </main>
   <aside class="settings">
     <h2>Settings</h2>
@@ -65,8 +68,6 @@
       <p id="prompt"></p>
     </div>
 
-    <div class="buttonarea"></div>
-    <button id="Option1">option 1</button>
-    <button id="Option2">option 2</button>
+    
   </body>
 </html>

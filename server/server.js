@@ -14,7 +14,7 @@ dotenv.config();
 // db pool url set up here, password and url all connected
 const db = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
-//prompts now all connected on the server api for referance
+//all get requests
 
 app.get("/gameprompts", async function (request, response) {
   const result = await db.query("SELECT * FROM gameprompts");
@@ -45,11 +45,20 @@ app.get("/username", async function (request, response) {
   const username = result.rows;
   response.json(username);
 });
-// empty space atm , need to decide on options and outcomes for each then can construct the post functions to data base and server api
+
 app.get("/options", async function (request, response) {
   const result = await db.query("SELECT * FROM options");
   const options = result.rows;
   response.json(options);
+});
+// post
+app.post("/username", async function (request, response) {
+  const username = request.body.username;
+  console.log(username);
+  const result = await db.query(
+    `INSERT INTO username (username) VALUES ('${username}')`
+  );
+  response.json(result);
 });
 
 //test, runs fine

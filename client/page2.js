@@ -1,9 +1,4 @@
 // JavaScript to toggle settings sidebar
-document.getElementById("menuButton").addEventListener("click", () => {
-  const settings = document.querySelector(".settings");
-  settings.classList.toggle("show");
-});
-
 const userName = document.getElementById("username");
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
@@ -11,7 +6,10 @@ const area = document.getElementById("area");
 const prompt = document.getElementById("prompt");
 const validation = document.getElementById("validation");
 
-//TODO username local storage
+document.getElementById("menuButton").addEventListener("click", () => {
+  const settings = document.querySelector(".settings");
+  settings.classList.toggle("show");
+});
 
 // get funtion: area/prompt
 const getPrompts = async () => {
@@ -32,26 +30,26 @@ const getOptions = async () => {
   option2.textContent = data[0].optiontwo;
 };
 
-// get funtion: outcomes
+/* get funtion: outcomes
 const getOutcomes = async () => {
-  const res = await fetch("http://localhost:8080/options");
+  const res = await fetch("http://localhost:8080/outcomes");
   const data = await res.json();
   console.log(data);
-};
+};*/
 
-// get funtion: monsters
+/* get funtion: monsters
 const getMonsters = async () => {
   const res = await fetch("http://localhost:8080/monsters");
   const data = await res.json();
   console.log(data);
-};
+};*/
 
-// get funtion: room
+/* get funtion: room
 const getRoom = async () => {
   const res = await fetch("http://localhost:8080/room");
   const data = await res.json();
   console.log(data);
-};
+};*/
 
 // get funtion: options
 const getUsername = async () => {
@@ -61,8 +59,5 @@ const getUsername = async () => {
 };
 
 getPrompts();
-getMonsters();
+
 getOptions();
-getOutcomes();
-getRoom();
-getUsername();

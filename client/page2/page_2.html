@@ -4,70 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>page 2</title>
-    <link rel="stylesheet" href="//week5_team_project/client/styles.css" />
+    <link rel="stylesheet" href="/client/styles.css" />
     <script type="module" src="/page2.js" defer></script>
   </head>
   <body>
     <div class="app">
-    <header>
-      <h1 id="area"></h1>
-      <div class="logo">
-      </div>
-      <button id="menuButton" class="menu-button">☰</button>
-    </header>
-    <main>
-      <div class="instructions">
-        <p><strong> User, Wake Up!!</strong></p>
-        <img src="/client/assets/logo/basement_logo.jpeg" alt="" />
-      </div>
-      <div class="story-content">
-        <p id="prompt"></p>
-        <div>
+      <header>
+        <div class="logo"></div>
+        <button id="menuButton" class="menu-button">☰</button>
+      </header>
+      <div id="area"></div>
+      <main>
+        <div class="instructions">
+          <p><strong> User, Wake Up!!</strong></p>
+          <img src="/client/assets/logo/basement_logo.jpeg" alt="" />
+        </div>
+        <div class="story-content">
+          <p id="prompt"></p>
+          <div>
             <button id="option1">Option 1</button>
             <p id="option1"></p>
-        </div>
-        <div>
+          </div>
+          <div>
             <button id="option2">Option 2</button>
             <p id="option2"></p>
+          </div>
         </div>
-        
-      </div>
 
-      <div class="action-buttons">
-        <button class="save">Save</button>
-        <button class="redo">Re-do</button>
-      </div>
-      
-    </main>
-  <aside class="settings">
-    <h2>Settings</h2>
-    <label>
-      <span>Audio</span>
-      <input type ="checkbox" checked>
-    </label>
-    <label>
-      <span>Music</span>
-      <input type ="checkbox" checked>
-    </label>
-    <label>
-      <span>Text Size</span>
-      <input type ="range" min ="14" max="24" value = "18">
-    </label>
-    <label>
-      <span>Text Style</span>
-      <input type ="checkbox" checked> Jetbrains Mono
-    </label>
-  </aside>
-  </div>
-
-      <h1 id="area"></h1>
-    </header>
-    <div class="instructions">
-      <p>User, Wake Up!!</p>
-      <img src="/client/assets/logo/basement_logo.jpeg" alt="" />
-      <p id="prompt"></p>
+        <div class="action-buttons">
+          <button class="save">Save</button>
+          <button class="redo">Re-do</button>
+        </div>
+      </main>
+      <aside class="settings">
+        <h2>Settings</h2>
+        <label>
+          <span>Audio</span>
+          <input type="checkbox" checked />
+        </label>
+        <label>
+          <span>Music</span>
+          <input type="checkbox" checked />
+        </label>
+        <label>
+          <span>Text Size</span>
+          <input type="range" min="14" max="24" value="18" />
+        </label>
+        <label>
+          <span>Text Style</span>
+          <input type="checkbox" checked /> Jetbrains Mono
+        </label>
+      </aside>
     </div>
-
-    
   </body>
 </html>

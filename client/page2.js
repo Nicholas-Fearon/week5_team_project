@@ -1,3 +1,10 @@
+
+// JavaScript to toggle settings sidebar
+document.getElementById('menuButton').addEventListener('click', () => {
+    const settings = document.querySelector('.settings');
+    settings.classList.toggle('show');
+});
+
 const userName = document.getElementById("username");
 const option1 = document.getElementById("Option1");
 const option2 = document.getElementById("Option2");

@@ -4,22 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/client/styles.css" />
-    <script type="module" src="./app.js" defer></script>
+    <script type="module" src="./page2.js" defer></script>
     <title>Basement</title>
   </head>
   <body>
     <header>
-      <img src="/client/assets/logo/basement_logo_sqr.png" alt="logo"/>
-      <h1>Basement</h1>
+      <img src="/client/assets/logo/basement_logo_sqr.png" alt="logo" />
+      <h1 id="area"></h1>
     </header>
-    <p>
-      You wake up in the abandoned house, and the floorboards creak beneath your
-      weight, as if protesting your intrusion. Dust motes dance in the weak
-      sunlight filtering through cracked windows. Shadows shift in the corners,
-      making you wonder if you are truly alone.
-    </p>
-
-    <input type="username" id="username" placeholder="Enter name" />
+    <p id="prompt"></p>
+    <label for="username">Enter name</label>
+    <input
+      type="username"
+      id="username"
+      name="username"
+      placeholder="Enter name"
+    />
 
     <a href="./page2/page_2.html"><button id="startBtn">Start</button></a>
     <p id="validation"></p>

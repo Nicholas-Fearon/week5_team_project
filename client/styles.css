@@ -1,12 +1,94 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-button {
+    background: none;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+}
+
 body{
     display: flexbox;
+}
+main{
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
 }
 .instructions{
     border-width: 3px;
     border-radius: 15px;
     border-color: black;
+    margin-bottom: 20px;
 }
 .logo.img{
    max-height: 10px ;
    max-width: 10px;
+}
+.story-content {
+    background: #ffcc33;
+    color: #000;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+}
+.action-buttons, .option-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.save {
+    background-color: #ffcc33;
+    color: #333;
+}
+.redo {
+    background-color: #666;
+    color: #fff;
+}
+.option {
+    background-color: #00aaff;
+    color: #fff;
+    flex-grow: 1;
+    margin: 5px;
+}
+.settings {
+    position: absolute;
+    right: -300px;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background: #ffd700;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: right 0.3s ease;
+}
+.settings h2 {
+    margin-bottom: 10px;
+}
+.settings label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Show Sidebar */
+.settings.show {
+    right: 0;
 }

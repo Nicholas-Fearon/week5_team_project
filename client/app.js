@@ -14,6 +14,15 @@ startBtn.addEventListener("click", (event) => {
   }
 });
 
+// post request will need to test
+await fetch("http://localhost:8080/username", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+  },
+  body: JSON.stringify(username),
+});
+
 // get funtion: area/prompt
 const getPrompts = async () => {
   const res = await fetch("http://localhost:8080/gameprompts");

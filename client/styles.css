@@ -1,0 +1,12 @@
+body{
+    display: flexbox;
+}
+.instructions{
+    border-width: 3px;
+    border-radius: 15px;
+    border-color: black;
+}
+.logo.img{
+   max-height: 10px ;
+   max-width: 10px;
+}

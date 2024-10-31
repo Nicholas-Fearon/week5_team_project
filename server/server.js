@@ -15,6 +15,11 @@ dotenv.config();
 const db = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
 //all get requests
+app.get("/everything", async function (request, response) {
+  const result = await db.query("SELECT * FROM everything");
+  const everything = result.rows;
+  response.json(everything);
+});
 
 app.get("/gameprompts", async function (request, response) {
   const result = await db.query("SELECT * FROM gameprompts");
@@ -22,11 +27,11 @@ app.get("/gameprompts", async function (request, response) {
   response.json(gameprompts);
 });
 
-app.get("/outcomes", async function (request, response) {
-  const result = await db.query("SELECT * FROM outcomes");
-  const outcomes = result.rows;
-  response.json(outcomes);
-});
+//app.get("/outcomes", async function (request, response) {
+//const result = await db.query("SELECT * FROM outcomes");
+//const outcomes = result.rows;
+//response.json(outcomes);
+//});
 
 app.get("/monsters", async function (request, response) {
   const result = await db.query("SELECT * FROM monsters");
@@ -34,11 +39,11 @@ app.get("/monsters", async function (request, response) {
   response.json(monsters);
 });
 
-app.get("/room", async function (request, response) {
-  const result = await db.query("SELECT * FROM room");
-  const room = result.rows;
-  response.json(room);
-});
+//app.get("/room", async function (request, response) {
+//const result = await db.query("SELECT * FROM room");
+//const room = result.rows;
+//response.json(room);
+//});
 
 app.get("/username", async function (request, response) {
   const result = await db.query("SELECT * FROM username");
@@ -46,11 +51,11 @@ app.get("/username", async function (request, response) {
   response.json(username);
 });
 
-app.get("/options", async function (request, response) {
-  const result = await db.query("SELECT * FROM options");
-  const options = result.rows;
-  response.json(options);
-});
+//app.get("/options", async function (request, response) {
+//const result = await db.query("SELECT * FROM options");
+//const options = result.rows;
+//response.json(options);
+//});
 // post
 app.post("/username", async function (request, response) {
   const username = request.body.username;

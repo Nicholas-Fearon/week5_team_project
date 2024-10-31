@@ -1,9 +1,11 @@
 // JavaScript to toggle settings sidebar
-document.getElementById('menuButton').addEventListener('click', () => {
-    const settings = document.querySelector('.settings');
-    settings.classList.toggle('show');
-    settings.classList.toggle('hide');
+document.getElementById("menuButton").addEventListener("click", () => {
+  const settings = document.querySelector(".settings");
+  settings.classList.toggle("show");
+  settings.classList.toggle("hide");
 });
+
+let currentPromptid = 1;
 
 const userName = document.getElementById("username");
 const option1 = document.getElementById("option1");
@@ -19,17 +21,43 @@ const getPrompts = async () => {
   console.log(data);
   area.textContent = data[1].location.toUpperCase();
   prompt.textContent = data[1].prompt;
+  for (let i = 0; i < gameprompts.length; i++) {
+    const prompt = gameprompts[i].prompt;
+    //const gameprompts = gameprompts[i].prompt;
+    const p = document.createElement("p");
+    p.textContent = `${prompt}`;
+    boxContainer.appendChild(p);
+  }
 };
-
-// get funtion: options
-const getOptions = async () => {
-  const res = await fetch("http://localhost:5174/options");
   const data = await res.json();
   console.log(data);
-  area.textContent = data[0].location;
-  option1.textContent = data[0].optionone;
-  option2.textContent = data[0].optiontwo;
+  updatePage();
 };
+
+const handle1 = () => {
+  // get id next prompt#
+  const currentstoryobj = data.find((item) => item.id === currentPromptid);
+
+  // update current prompt id
+  currentPromptid = currentstoryobj.next_story_one;
+  updatePage();
+  //update page
+};
+
+const handle2 = () => {
+  const currentstoryobj = data.find((item) => item.id === currentPromptid);
+  currentPromptid = currentstoryobj.next_story_two;
+  updatePage();
+};
+// get funtion: options
+//const getOptions = async () => {
+//const res = await fetch("http://localhost:8080/options");
+//const data = await res.json();
+// console.log(data);
+//area.textContent = data[0].location;
+//option1.textContent = data[0].optionone;
+//option2.textContent = data[0].optiontwo;
+//};
 
 /* get funtion: outcomes
 const getOutcomes = async () => {
@@ -62,3 +90,5 @@ const getUsername = async () => {
 getPrompts();
 
 getOptions();
+
+getEverything();

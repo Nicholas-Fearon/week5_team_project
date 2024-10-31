@@ -11,44 +11,68 @@
   <body>
     <div class="app">
       <header>
-        <h1>Basement</h1>
-        <div class="logo">
-          <img src="/assets/logo/basement_logo_sqr.png" alt="logo" />
+        <div class="logo-title">
+          <img
+            src="/assets/logo/basement_logo_sqr.png"
+            alt="logo"
+            class="logo"
+          />
+          <h1>Basement</h1>
         </div>
         <button id="menuButton" class="menu-button">☰</button>
       </header>
       <main>
         <div class="instructions">
-          <p><strong> Hey, Wake Up, whats your name?!!</strong></p>
-          <input type="username" id="username" placeholder="Enter name" />
-          <a href="./page2/page_2.html"><button id="startBtn">Start</button></a>
+          <p><strong>Hey, Wake Up, what's your name?!!</strong></p>
+          <input type="text" id="username" placeholder="Enter name" />
+          <button id="startBtn">Start</button>
           <p id="validation"></p>
-          
-          <h1 id="area"></h1>
-          <img src="/client/assets/logo/basement_logo.jpeg" alt="" />
-          <p>continue of the story</p>
-          <p id="prompt"></p>
+          <h1 id="area">User, Wake up!!</h1>
+        </div>
+        <div class="container2">
+          <p>Unlock Map</p>
+          <img
+            src="/assets/images/basementplan.png"
+            alt="map"
+            class="map-img"
+          />
+          <p>Continue the story</p>
+          <div class="story-content">
+            <p>
+              Basement: You open your eyes, and it's dark; your hands are tied.
+            </p>
+            <p>Option 1: You try to break free.</p>
+            <p>Option 2: You call for help.</p>
+          </div>
+        </div>
+        <div class="action-buttons">
+          <button class="save">Save</button>
+          <button class="redo">Re-do</button>
+        </div>
+        <div class="option-buttons">
+          <button class="option">Option 1</button>
+          <button class="option">Option 2</button>
         </div>
       </main>
-    <aside class="settings">
-      <h2 id="menu">Settings</h2>
-      <label>
-        <span>Audio</span>
-        <input type ="checkbox" checked>
-      </label>
-      <label>
-        <span>Music</span>
-        <input type ="checkbox" checked>
-      </label>
-      <label>
-        <span>Text Size</span>
-        <input type ="range" min ="14" max="24" value = "18">
-      </label>
-      <label>
-        <span>Text Style</span>
-        <input type ="checkbox" checked> Jetbrains Mono
-      </label>
-    </aside>
+      <aside class="settings">
+        <h2 id="menu">Settings</h2>
+        <label>
+          <span>Audio</span>
+          <input type="checkbox" checked />
+        </label>
+        <label>
+          <span>Music</span>
+          <input type="checkbox" checked />
+        </label>
+        <label>
+          <span>Text Size</span>
+          <input type="range" min="14" max="24" value="18" />
+        </label>
+        <label>
+          <span>Text Style</span>
+          <input type="checkbox" checked /> Jetbrains Mono
+        </label>
+      </aside>
     </div>
   </body>
 </html>

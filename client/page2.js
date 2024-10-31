@@ -6,6 +6,7 @@ document.getElementById("menuButton").addEventListener("click", () => {
 });
 
 let currentPromptid = 1;
+
 const userName = document.getElementById("username");
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
@@ -13,14 +14,9 @@ const area = document.getElementById("area");
 const prompt = document.getElementById("prompt");
 const validation = document.getElementById("validation");
 
-document.getElementById("menuButton").addEventListener("click", () => {
-  const settings = document.querySelector(".settings");
-  settings.classList.toggle("show");
-});
-
 // get funtion: area/prompt
 const getPrompts = async () => {
-  const res = await fetch("http://localhost:8080/gameprompts");
+  const res = await fetch("http://localhost:5174/gameprompts");
   const data = await res.json();
   console.log(data);
   area.textContent = data[1].location.toUpperCase();
@@ -33,15 +29,6 @@ const getPrompts = async () => {
     boxContainer.appendChild(p);
   }
 };
-
-const updatePage = () => {
-  const currentstoryobj = data.find((item) => item.id === currentPromptid);
-  area.textContent = currentstoryobj.prompt;
-  option1.textContent = currentstoryobj.optionone;
-  option2.textContent = currentstoryobj.optiontwo;
-};
-const getEverything = async () => {
-  const res = await fetch("http://localhost:8080/everything");
   const data = await res.json();
   console.log(data);
   updatePage();
@@ -95,7 +82,7 @@ const getRoom = async () => {
 
 // get funtion: options
 const getUsername = async () => {
-  const res = await fetch("http://localhost:8080/username");
+  const res = await fetch("http://localhost:5174/username");
   const data = await res.json();
   console.log(data);
 };

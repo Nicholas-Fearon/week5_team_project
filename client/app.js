@@ -1,5 +1,5 @@
 const userName = document.getElementById("username");
-const startBtn = document.getElementById("startbtn");
+const startBtn = document.getElementById("startBtn");
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const area = document.getElementById("area");
@@ -17,7 +17,7 @@ startBtn.addEventListener("click", async (event) => {
     headers: {
       "content-type": "application/json",
     },
-    body: JSON.stringify(userName).value.trim(),
+    body: JSON.stringify(userName).valueOf.trim(),
   });
 });
 

@@ -43,8 +43,8 @@ const getEverything = async () => {
   console.log(data);
   updatePage();
 };
-option1.addEventListener("click", handle1);
-option2.addEventListener("click", handle2);
+//option1.addEventListener("click", handle1);
+//option2.addEventListener("click", handle2);
 const handle1 = () => {
   // get id next prompt#
   const currentstoryobj = data.find((item) => item.id === currentPromptid);

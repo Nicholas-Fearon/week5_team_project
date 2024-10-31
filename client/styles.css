@@ -31,8 +31,9 @@ main{
     border-color: black;
     margin-bottom: 20px;
 }
-.logo.img{
-    max-height: 15px;
+img.logo{
+    max-height: 10px;
+    max-width: 10px;
 }
 .story-content {
     background: #ffcc33;

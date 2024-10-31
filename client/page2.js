@@ -29,6 +29,15 @@ const getPrompts = async () => {
     boxContainer.appendChild(p);
   }
 };
+
+const updatePage = () => {
+  const currentstoryobj = data.find((item) => item.id === currentPromptid);
+  area.textContent = currentstoryobj.prompt;
+  option1.textContent = currentstoryobj.optionone;
+  option2.textContent = currentstoryobj.optiontwo;
+};
+const getEverything = async () => {
+  const res = await fetch("http://localhost:8080/everything");
   const data = await res.json();
   console.log(data);
   updatePage();
@@ -60,25 +69,25 @@ const handle2 = () => {
 //};
 
 /* get funtion: outcomes
-const getOutcomes = async () => {
-  const res = await fetch("http://localhost:8080/outcomes");
-  const data = await res.json();
-  console.log(data);
-};*/
+  const getOutcomes = async () => {
+    const res = await fetch("http://localhost:8080/outcomes");
+    const data = await res.json();
+    console.log(data);
+  };*/
 
 /* get funtion: monsters
-const getMonsters = async () => {
-  const res = await fetch("http://localhost:8080/monsters");
-  const data = await res.json();
-  console.log(data);
-};*/
+  const getMonsters = async () => {
+    const res = await fetch("http://localhost:8080/monsters");
+    const data = await res.json();
+    console.log(data);
+  };*/
 
 /* get funtion: room
-const getRoom = async () => {
-  const res = await fetch("http://localhost:8080/room");
-  const data = await res.json();
-  console.log(data);
-};*/
+  const getRoom = async () => {
+    const res = await fetch("http://localhost:8080/room");
+    const data = await res.json();
+    console.log(data);
+  };*/
 
 // get funtion: options
 const getUsername = async () => {

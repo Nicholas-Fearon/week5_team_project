@@ -3,25 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/client/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./app.js" defer></script>
+    <script type="module" src="/page2.js" defer></script>
     <title>Basement</title>
   </head>
   <body>
-    <header>
-      <img src="/client/assets/logo/basement_logo_sqr.png" alt="logo" />
-      <h1 id="area"></h1>
-    </header>
-    <p id="prompt"></p>
-
-    <input
-      name="username"
-      type="username"
-      id="username"
-      placeholder="Enter name"
-    />
-
-    <a href="./page2/page_2.html"><button id="startBtn">Start</button></a>
-    <p id="validation"></p>
+    <div class="app">
+      <header>
+        <h1>Basement</h1>
+        <div class="logo">
+          <img src="/assets/logo/basement_logo_sqr.png" alt="logo" />
+        </div>
+        <button id="menuButton" class="menu-button">☰</button>
+      </header>
+      <main>
+        <div class="instructions">
+          <p><strong> Hey, Wake Up, whats your name?!!</strong></p>
+          <input type="username" id="username" placeholder="Enter name" />
+          <a href="./page2/page_2.html"><button id="startBtn">Start</button></a>
+          <p id="validation"></p>
+          
+          <h1 id="area"></h1>
+          <img src="/client/assets/logo/basement_logo.jpeg" alt="" />
+          <p>continue of the story</p>
+          <p id="prompt"></p>
+        </div>
+      </main>
+    <aside class="settings">
+      <h2 id="menu">Settings</h2>
+      <label>
+        <span>Audio</span>
+        <input type ="checkbox" checked>
+      </label>
+      <label>
+        <span>Music</span>
+        <input type ="checkbox" checked>
+      </label>
+      <label>
+        <span>Text Size</span>
+        <input type ="range" min ="14" max="24" value = "18">
+      </label>
+      <label>
+        <span>Text Style</span>
+        <input type ="checkbox" checked> Jetbrains Mono
+      </label>
+    </aside>
+    </div>
   </body>
 </html>

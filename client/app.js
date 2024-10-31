@@ -50,8 +50,8 @@ const getPrompts = async () => {
   console.log(data); //Log the data to check
 
   // Update HTML elements with the current location and prompt
-  area.textContent = data.location;
-  prompt.textContent = data.prompt;
+  //area.textContent = data.location.toUpperCase();
+  //prompt.textContent = data.prompt;
 };
 
 // Function to save the player's current location to local storage

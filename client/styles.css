@@ -121,6 +121,10 @@ button {
   color: #fff;
   flex: 1;
 }
+.pill {
+  border-radius: 50%;
+  border-color: #000;
+}
 
 /* Settings Sidebar */
 .settings {

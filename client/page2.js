@@ -14,35 +14,24 @@ const area = document.getElementById("area");
 const prompt = document.getElementById("prompt");
 const validation = document.getElementById("validation");
 
-// get funtion: area/prompt
-//const getPrompts = async () => {
-//const res = await fetch("http://localhost:5174/gameprompts");
-//const data = await res.json();
-//console.log(data);
-//area.textContent = data[1].location.toUpperCase();
-//prompt.textContent = data[1].prompt;
-//for (let i = 0; i < gameprompts.length; i++) {
-//const prompt = gameprompts[i].prompt;
-//const gameprompts = gameprompts[i].prompt;
-//const p = document.createElement("p");
-//p.textContent = `${prompt}`;
-//boxContainer.appendChild(p);
-//}
-//};
 // update page from api
-const updatePage = () => {
+const render = async () => {
+  const res = await fetch("http://localhost:8080/everything");
+  const data = await res.json();
+  console.log(data);
+  prompt.textContent = data[0].prompt;
+  option1.textContent = data[0].optionone;
+  option2.textContent = data[0].optiontwo;
+};
+
+/*const updatePage = () => {
   const currentstoryobj = data.find((item) => item.id === currentPromptid);
   area.textContent = currentstoryobj.prompt;
   option1.textContent = currentstoryobj.optionone;
   option2.textContent = currentstoryobj.optiontwo;
   updatePage();
-};
-const getEverything = async () => {
-  const res = await fetch("http://localhost:8080/everything");
-  const data = await res.json();
-  console.log(data);
-  updatePage();
-};
+};*/
+
 //option1.addEventListener("click", handle1);
 //option2.addEventListener("click", handle2);
 const handle1 = () => {
@@ -103,4 +92,4 @@ const getUsername = async () => {
 
 //getOptions();
 
-getEverything();
+render();

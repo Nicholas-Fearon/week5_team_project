@@ -1,103 +1,154 @@
+/* General Styles */
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*max-height: 100vh;*/
+}
+.app {
+  width: 450px;
+  max-width: 100%;
+}
+
+/* Header Styles */
 header {
-    background-color: #fff;
-    color: black;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 15px;
-    gap: 15px;
+  position: relative;
+  background-color: #fff;
+  color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+img.logo {
+  height: 30px;
+  width: auto;
 }
 .menu-button {
-    background: none;
-    color: black;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    z-index:1;
+  background: none;
+  color: black;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
 }
-body{
-background-color: black;
-display: flexbox;
+/* Main Section */
+main {
+  padding: 20px;
+  background-color: #fff;
+  color: black;
+  border-radius: 15px;
 }
-main{
-    padding: 20px;
-    background-color: #fff;
-    color: black;
-    border-radius: 15px;
+/* Instructions Section */
+.instructions {
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: tomato;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
 }
-.instructions{
-    border-width: 3px;
-    border-radius: 15px;
-    border-color: black;
-    margin-bottom: 20px;
+input#username {
+  width: 40%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
 }
-img.logo{
-    height: 30px;
-    width: auto;
-    max-height: 30px;
-    z-index: 1;
-
+/* Container for Map and Story */
+.container2 {
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #ffcc33;
+  color: black;
+  margin-bottom: 20px;
 }
+.map-img {
+  width: 100px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+/* Story Content */
 .story-content {
-    background: #ffcc33;
-    color: #000;
-    border-width: 3px;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-family: 'JetBrains Mono', monospace;
+  background: #ffcc33;
+  color: #000;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
 }
-.action-buttons, .option-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-    border-width: 10px;
+/* Action Buttons */
+.action-buttons,
+.option-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0;
 }
 button {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
 }
 .save {
-    background-color: #ffcc33;
-    color: #333;
+  background-color: #ffcc33;
+  color: #333;
+  flex: 1;
 }
 .redo {
-    background-color: #666;
-    color: #fff;
+  background-color: #666;
+  color: #fff;
+  flex: 1;
 }
 .option {
-    background-color: #00aaff;
-    color: #fff;
-    flex-grow: 1;
-    margin: 5px;
+  background-color: #00aaff;
+  color: #fff;
+  flex: 1;
 }
+
+/* Settings Sidebar */
 .settings {
-    position: absolute;
-    right: -300px;
-    top: 0;
-    height: 100%;
-    width: 250px;
-    background: #ffd700;
-    color: #333;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: right 0.3s ease;
+  position: absolute;
+  right: -300px;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background: #ffd700;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.3s ease;
 }
+
 .settings h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
+
 .settings label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 /* Show Sidebar */
 .settings.show {
-    right: 0;
+  right: 0;
 }
